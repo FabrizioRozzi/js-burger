@@ -15,8 +15,12 @@ scriviPrezzo(prezzoDeafault, prezzoContainer)
 // EVENTI
 
 bottone.addEventListener('click', function(){
-console.log(nomePanino.value.lenght)
-if(nomePanino.value.lenght === 0){
+  // Elimino la possibilitá di inserire spazi vuoti con "trim()".
+  var nomeInserito = nomePanino.value.trim();
+  console.log(nomeInserito.length)
+  // Eseguo un test sul nome del panino inserito dall'utente.
+if(nomeInserito.length === 0){
+  // Se non si inserisce il nome del panino esce l'alert.
   alert("Inserisci il nome del panino");
 }
 })
