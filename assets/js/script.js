@@ -1,23 +1,29 @@
-var nomeHamb = document.getElementById("name");
-var calculated_btn = document.getElementById("button");
-var ingredienti = document.getElementsByClassName("ingredient-checkbox");
+// REFERENCES
+
+var prezzoContainer = document.getElementById('price');
+var bottone = document.getElementById('button');
+var nomePanino = document.getElementById('name');
 
 
-var prezzoBase = 5;
-document.getElementById("price").innerHTML = prezzoBase.toFixed(2);
 
-calculated_btn.addEventListener('click' , function(){
-  if(nomeHamb === NaN){
-    alert("Devi inserire un nome all'hamburger")
-  }else {
-    // Se abbiamo inserito il nome mi creo una variabile che mi somma il prezzo di eventuali condimenti.
-    var prezzoIngredienti = 0;
-    for(i = 0; i < ingredienti.length; i++){
-      // Creo una variabile dove salvo l'ingrediente che sta ciclando cosi dopo posso verificare se é stato selezionato.
-      var ingredienteCiclo = ingredienti[i];
-      if(ingredienti.checked === true){
-        prezzoIngredienti = prezzoIngredienti + (parseInt(ingrediente.value));
-      }
-    }
-  }
+// IMPOSTAZIONE
+
+var prezzoDeafault = 5;
+scriviPrezzo(prezzoDeafault, prezzoContainer)
+
+
+// EVENTI
+
+bottone.addEventListener('click', function(){
+console.log(nomePanino.value.lenght)
+if(nomePanino.value.lenght === 0){
+  alert("Inserisci il nome del panino");
+}
 })
+
+
+// FUNZIONI
+
+function scriviPrezzo( valore, target){
+  target.innerHTML = valore.toFixed(2);
+}
